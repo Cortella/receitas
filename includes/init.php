@@ -27,7 +27,7 @@ function br_receitas_init(){
         'capability_type' => 'post',
         'has_archive' => true,
         'heirarchical' => false,
-        'menu_position' => 5,
+        'menu_position' => 6,
         'supports' => array('title','editor','author','thumbnail')
 
     );

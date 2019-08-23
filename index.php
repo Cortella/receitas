@@ -14,13 +14,16 @@ if(!function_exists('add_action')){
 }
 
 //Setup
-
+define ('RECEITA_PLUGIN_URL', __FILE__);
 //Includes
 include('includes/activate.php');
 include('includes/init.php');
+include('includes/admin/admin_init.php');
 //Hooks
-register_activation_hook(__FILE__, 'br_activate_plugin');
+register_activation_hook(RECEITA_PLUGIN_URL, 'br_activate_plugin');
 add_action('init', 'br_receitas_init');
+add_action('admin_init','br_receitas_admin_init');
+add_action('save_post_receita', 'br_save_post_admin',10,3);
 //Shortcodes
 
 
